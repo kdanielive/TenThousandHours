@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XDg-jL-BbH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-xO-E2V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Masteries-->
+        <!--Life Assistant-->
         <scene sceneID="EAD-f3-fab">
             <objects>
                 <tableViewController id="F4A-w6-Sgx" customClass="MasteryTableViewController" customModule="LifeAssistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,14 +109,13 @@
                             <outlet property="delegate" destination="F4A-w6-Sgx" id="lsR-Uo-Yh5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Masteries" id="wyj-50-red"/>
-                    <navigationItem key="navigationItem" id="DKP-Xh-E1y"/>
+                    <navigationItem key="navigationItem" title="Life Assistant" id="DKP-Xh-E1y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ec-9H-Abe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="-170"/>
+            <point key="canvasLocation" x="3639.1999999999998" y="-170.46476761619192"/>
         </scene>
-        <!--Experience-->
+        <!--Life Assistant-->
         <scene sceneID="7kM-ZB-JIu">
             <objects>
                 <tableViewController id="D7U-Nq-C9V" customClass="ExperienceTableViewController" customModule="LifeAssistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,9 +168,8 @@
                             <outlet property="delegate" destination="D7U-Nq-C9V" id="LJl-Ft-ze7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Experience" id="x2O-1h-EOm"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="3HP-WS-paH">
+                    <navigationItem key="navigationItem" title="Life Assistant" id="3HP-WS-paH">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="avT-jz-Kr2">
                             <connections>
                                 <action selector="reloadScreen:" destination="D7U-Nq-C9V" id="YJY-B5-LPg"/>
@@ -185,30 +183,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YM0-GU-S5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="500.59970014992507"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8yi-lV-wg2">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uw4-My-uWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XDg-jL-BbH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DUU-hi-UUd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.18761278125513831" green="0.21140696922975821" blue="0.2596745466321243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                            <color key="textColor" red="0.87242227945147233" green="1" blue="0.99642471759164841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="D7j-xO-E2V" kind="relationship" relationship="rootViewController" id="vLX-Ax-YcQ"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="799.20000000000005" y="104.7976011994003"/>
+            <point key="canvasLocation" x="3639" y="530"/>
         </scene>
         <!--Life Assistant-->
         <scene sceneID="vUO-NK-SgN">
@@ -221,13 +196,59 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="F4A-w6-Sgx" kind="relationship" relationship="viewControllers" id="AKG-YG-0Xz"/>
-                        <segue destination="D7U-Nq-C9V" kind="relationship" relationship="viewControllers" id="nmE-d9-cfw"/>
+                        <segue destination="anw-Bc-yxr" kind="relationship" relationship="viewControllers" id="AKG-YG-0Xz"/>
+                        <segue destination="TKZ-1r-Rh8" kind="relationship" relationship="viewControllers" id="nmE-d9-cfw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLR-Fe-S6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738.4000000000001" y="104.7976011994003"/>
+            <point key="canvasLocation" x="1570" y="105"/>
+        </scene>
+        <!--Masteries-->
+        <scene sceneID="qSZ-Sy-djR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="anw-Bc-yxr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Masteries" id="wyj-50-red"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vkv-bJ-iUD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.063981674119999998" green="0.098278135040000006" blue="0.2596745466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.87242227949999995" green="1" blue="0.99642471759999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F4A-w6-Sgx" kind="relationship" relationship="rootViewController" id="BSU-YH-jOD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cF-eP-h34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="-170.46476761619192"/>
+        </scene>
+        <!--Experience-->
+        <scene sceneID="oYl-Le-thY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKZ-1r-Rh8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Experience" id="x2O-1h-EOm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kfy-90-oif">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.063981674119999998" green="0.098278135040000006" blue="0.2596745466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.87242227949999995" green="1" blue="0.99642471759999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D7U-Nq-C9V" kind="relationship" relationship="rootViewController" id="uj6-5S-Qj0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lej-3E-MFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="531"/>
         </scene>
     </scenes>
 </document>

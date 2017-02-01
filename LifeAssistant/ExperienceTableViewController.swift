@@ -18,6 +18,7 @@ class ExperienceTableViewController: UITableViewController {
         self.navigationController?.navigationBar.isTranslucent = false;
         
         self.tableView.reloadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
