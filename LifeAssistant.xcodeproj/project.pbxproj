@@ -17,6 +17,8 @@
 		736DBF1D1E41966E0029384E /* MasteryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DBF1C1E41966E0029384E /* MasteryTableViewController.swift */; };
 		736DBF231E419CD00029384E /* MasteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DBF221E419CD00029384E /* MasteryTableViewCell.swift */; };
 		736DBF291E419E8C0029384E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DBF281E419E8C0029384E /* DataManager.swift */; };
+		73FF29511E42852300B93199 /* ExperienceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FF29501E42852300B93199 /* ExperienceTableViewController.swift */; };
+		73FF29531E42852F00B93199 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FF29521E42852F00B93199 /* ExperienceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		736DBF1C1E41966E0029384E /* MasteryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasteryTableViewController.swift; sourceTree = "<group>"; };
 		736DBF221E419CD00029384E /* MasteryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasteryTableViewCell.swift; sourceTree = "<group>"; };
 		736DBF281E419E8C0029384E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		73FF29501E42852300B93199 /* ExperienceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewController.swift; sourceTree = "<group>"; };
+		73FF29521E42852F00B93199 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +107,12 @@
 		736DBEED1E41956D0029384E /* LifeAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				73FF294F1E42850900B93199 /* ExperienceTableView */,
+				73FF294E1E4284FC00B93199 /* MasteryTableView */,
 				736DBEEE1E41956D0029384E /* AppDelegate.swift */,
 				736DBEF01E41956D0029384E /* ViewController.swift */,
-				736DBF221E419CD00029384E /* MasteryTableViewCell.swift */,
 				736DBF281E419E8C0029384E /* DataManager.swift */,
 				736DBEF21E41956D0029384E /* Main.storyboard */,
-				736DBF1C1E41966E0029384E /* MasteryTableViewController.swift */,
 				736DBEF51E41956D0029384E /* Assets.xcassets */,
 				736DBEF71E41956D0029384E /* LaunchScreen.storyboard */,
 				736DBEFA1E41956D0029384E /* Info.plist */,
@@ -132,6 +136,24 @@
 				736DBF101E41956D0029384E /* Info.plist */,
 			);
 			path = LifeAssistantUITests;
+			sourceTree = "<group>";
+		};
+		73FF294E1E4284FC00B93199 /* MasteryTableView */ = {
+			isa = PBXGroup;
+			children = (
+				736DBF1C1E41966E0029384E /* MasteryTableViewController.swift */,
+				736DBF221E419CD00029384E /* MasteryTableViewCell.swift */,
+			);
+			name = MasteryTableView;
+			sourceTree = "<group>";
+		};
+		73FF294F1E42850900B93199 /* ExperienceTableView */ = {
+			isa = PBXGroup;
+			children = (
+				73FF29501E42852300B93199 /* ExperienceTableViewController.swift */,
+				73FF29521E42852F00B93199 /* ExperienceTableViewCell.swift */,
+			);
+			name = ExperienceTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +297,9 @@
 				736DBF291E419E8C0029384E /* DataManager.swift in Sources */,
 				736DBF231E419CD00029384E /* MasteryTableViewCell.swift in Sources */,
 				736DBEEF1E41956D0029384E /* AppDelegate.swift in Sources */,
+				73FF29531E42852F00B93199 /* ExperienceTableViewCell.swift in Sources */,
 				736DBF1D1E41966E0029384E /* MasteryTableViewController.swift in Sources */,
+				73FF29511E42852300B93199 /* ExperienceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

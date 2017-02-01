@@ -11,6 +11,9 @@ import UIKit
 class MasteryTableViewController: UITableViewController {
     
     var masteryNum = 0
+    
+    var startedTime = NSDate()
+    var lastStartedTime = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,9 @@ class MasteryTableViewController: UITableViewController {
             cell.deleteMastery.tag = indexPath.row
             cell.deleteMastery.addTarget(self, action: #selector(MasteryTableViewController.deleteToggled(_:)), for: UIControlEvents.touchUpInside)
             
+            cell.startTime.addTarget(self, action: #selector(MasteryTableViewController.startTimer(_:)), for: UIControlEvents.touchUpInside)
+            cell.startTime.tag = indexPath.row
+            
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell" , for: indexPath) as! MasteryTableViewCell
@@ -65,6 +71,26 @@ class MasteryTableViewController: UITableViewController {
             
             return cell
         }
+    }
+    
+    func startTimer(_ sender: UIButton) {
+        lastStartedTime = startedTime
+        startedTime = NSDate()
+        
+        let currentTag = sender.tag
+        
+        let elapsedTime : Double = startedTime.timeIntervalSince(lastStartedTime as Date)
+        
+        if(DataManager.defaults.integer(forKey: "lastTag") != 0) {
+            let lastTag = DataManager.defaults.integer(forKey: "lastTag")
+            let saveTargetString = DataManager.defaults.object(forKey: "\(lastTag + 1)") as! String
+            let previousElapsed = DataManager.defaults.double(forKey: saveTargetString)
+            DataManager.defaults.set(previousElapsed + elapsedTime, forKey: saveTargetString)
+        } else {
+            DataManager.defaults.set(currentTag, forKey: "lastTag")
+        }
+        
+        print(elapsedTime)
     }
     
     func deleteToggled(_ sender: UIButton) {
