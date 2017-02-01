@@ -15,13 +15,15 @@ class MasteryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.allowsSelection = false
+        
         self.view.isUserInteractionEnabled = true
         
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +47,6 @@ class MasteryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row < masteryNum) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MasteryCell", for: indexPath)
-            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell", for : indexPath)
