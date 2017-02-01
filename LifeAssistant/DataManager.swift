@@ -10,6 +10,10 @@ import Foundation
 
 struct DataManager {
     static var defaults = UserDefaults.standard
+    
+    static func setMasteryNum(number : Int) {
+        DataManager.defaults.set(number, forKey: "masteryNum")
+    }
 
     static var tempMasteryName = ""
 }

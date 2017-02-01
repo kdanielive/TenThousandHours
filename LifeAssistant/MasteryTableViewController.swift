@@ -15,6 +15,8 @@ class MasteryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        masteryNum = DataManager.defaults.integer(forKey: "masteryNum")
+        
         self.tableView.allowsSelection = false
         
         self.view.isUserInteractionEnabled = true
@@ -55,8 +57,15 @@ class MasteryTableViewController: UITableViewController {
             cell.addMastery.addTarget(self, action: #selector(MasteryTableViewController.addToggled(_:)), for: UIControlEvents.touchUpInside)
             cell.addMasteryNameTextField.addTarget(self, action: #selector(MasteryTableViewController.masteryTextEditEnded(_:)), for: UIControlEvents.editingDidEndOnExit)
             cell.addMasteryNameTextField.addTarget(self, action: #selector(MasteryTableViewController.masteryTextEditEnded(_:)), for: UIControlEvents.editingDidEnd)
+            
+            DataManager.setMasteryNum(number: masteryNum)
+            
             return cell
         }
+    }
+    
+    func deleteToggled(_ sender: UIButton) {
+        
     }
 
     func masteryTextEditEnded(_ sender: UITextField) {
