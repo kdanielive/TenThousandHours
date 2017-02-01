@@ -10,8 +10,6 @@ import Foundation
 
 struct DataManager {
     static var defaults = UserDefaults.standard
-    
+
     static var tempMasteryName = ""
-    
-    static var masteryArray = [String]()
 }

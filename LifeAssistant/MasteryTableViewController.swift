@@ -10,7 +10,7 @@ import UIKit
 
 class MasteryTableViewController: UITableViewController {
     
-    var masteryNum = 2
+    var masteryNum = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,27 +45,32 @@ class MasteryTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if(indexPath.row < masteryNum) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MasteryCell", for: indexPath)
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "MasteryCell" , for: indexPath) as! MasteryTableViewCell
+            cell.masteryLabel.text = DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as? String
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell", for : indexPath)
-            
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell" , for: indexPath) as! MasteryTableViewCell
+            cell.addMastery.addTarget(self, action: #selector(MasteryTableViewController.addToggled(_:)), for: UIControlEvents.touchUpInside)
+            cell.addMasteryNameTextField.addTarget(self, action: #selector(MasteryTableViewController.masteryTextEditEnded(_:)), for: UIControlEvents.editingDidEndOnExit)
+            cell.addMasteryNameTextField.addTarget(self, action: #selector(MasteryTableViewController.masteryTextEditEnded(_:)), for: UIControlEvents.editingDidEnd)
             return cell
         }
     }
 
-    @IBAction func masteryTextEditEnded(_ sender: UITextField) {
+    func masteryTextEditEnded(_ sender: UITextField) {
         DataManager.tempMasteryName = sender.text!
     }
     
-    @IBAction func addToggled(_ sender: Any) {
+    func addToggled(_ sender: UIButton) {
+        
+        let keyForDefaults = masteryNum + 1
+        
+        DataManager.defaults.set(DataManager.tempMasteryName, forKey: "\(keyForDefaults)")
         
         masteryNum += 1
-        
-        DataManager.masteryArray.append(DataManager.tempMasteryName)
-        
-        DataManager.defaults.set(DataManager.masteryArray, forKey: DataManager.tempMasteryName)
+        self.tableView.reloadData()
     }
 
     /*
