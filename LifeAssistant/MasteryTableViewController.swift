@@ -54,13 +54,14 @@ class MasteryTableViewController: UITableViewController {
         
         if(indexPath.row < masteryNum) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MasteryCell" , for: indexPath) as! MasteryTableViewCell
-            cell.masteryLabel.text = DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as? String
+            cell.masteryLabel.text = (DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as! String)
             
             cell.deleteMastery.tag = indexPath.row
             cell.deleteMastery.addTarget(self, action: #selector(MasteryTableViewController.deleteToggled(_:)), for: UIControlEvents.touchUpInside)
             
             cell.startTime.addTarget(self, action: #selector(MasteryTableViewController.startTimer(_:)), for: UIControlEvents.touchUpInside)
             cell.startTime.tag = indexPath.row
+            print(cell.startTime.tag)
             
             return cell
         } else {
@@ -85,11 +86,15 @@ class MasteryTableViewController: UITableViewController {
         
         if(DataManager.defaults.integer(forKey: "lastTag") != 0) {
             let lastTag = DataManager.defaults.integer(forKey: "lastTag")
-            let saveTargetString = DataManager.defaults.object(forKey: "\(lastTag + 1)") as! String
+            print(DataManager.defaults.integer(forKey: "lastTag"))
+            let saveTargetString = DataManager.defaults.object(forKey: "\(lastTag)") as! String
+            print(DataManager.defaults.object(forKey: "\(lastTag)") as! String)
             let previousElapsed = DataManager.defaults.double(forKey: saveTargetString)
+            print(DataManager.defaults.double(forKey: saveTargetString))
             DataManager.defaults.set(previousElapsed + elapsedTime, forKey: saveTargetString)
+            DataManager.defaults.set(currentTag + 1, forKey: "lastTag")
         } else {
-            DataManager.defaults.set(currentTag, forKey: "lastTag")
+            DataManager.defaults.set(currentTag + 1, forKey: "lastTag")
         }
         
         print(elapsedTime)
