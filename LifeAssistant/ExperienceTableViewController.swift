@@ -12,7 +12,10 @@ class ExperienceTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.isTranslucent = false;
+        
+        self.tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,12 +45,11 @@ class ExperienceTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ExperienceCell" , for: indexPath) as! ExperienceTableViewCell
         cell.masteryLabel.text = DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as? String
         
-        cell.experienceLabel.text = "\(DataManager.getHour(index: row)) /  \(DataManager.getMinute(index: row)) / \(DataManager.getSecond(index: row))"
+        cell.experienceLabel.text = "\(DataManager.getHour(index: row)) h  \(DataManager.getMinute(index: row)) m \(DataManager.getSecond(index: row)) s"
         // Configure the cell...
 
         return cell
     }
-    
     
     /*
     // Override to support conditional editing of the table view.

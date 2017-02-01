@@ -18,6 +18,8 @@ class MasteryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false;
+        
         masteryNum = DataManager.defaults.integer(forKey: "masteryNum")
         
         self.tableView.allowsSelection = false

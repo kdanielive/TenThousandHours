@@ -6,11 +6,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Life Assistant-->
+        <!--Masteries-->
         <scene sceneID="EAD-f3-fab">
             <objects>
                 <tableViewController id="F4A-w6-Sgx" customClass="MasteryTableViewController" customModule="LifeAssistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,23 +72,31 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7x-nc-6OL" id="KRg-3n-Gzc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVK-2V-9ob">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVK-2V-9ob">
                                             <rect key="frame" x="260" y="6" width="107" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.86762507150000001" green="0.89621113990000001" blue="0.88815497990000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="107" id="hw2-7B-UqK"/>
+                                            </constraints>
                                             <state key="normal" title="Add"/>
                                         </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mastery to Add" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4C-sx-4Te">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mastery to Add" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4C-sx-4Te">
                                             <rect key="frame" x="8" y="6" width="244" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="textColor" red="0.25166943479999998" green="0.38677761970000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="R4C-sx-4Te" firstAttribute="top" secondItem="JVK-2V-9ob" secondAttribute="top" id="4hd-4Z-hk2"/>
+                                        <constraint firstItem="R4C-sx-4Te" firstAttribute="centerY" secondItem="KRg-3n-Gzc" secondAttribute="centerY" id="F2v-Gs-rf5"/>
+                                        <constraint firstItem="JVK-2V-9ob" firstAttribute="leading" secondItem="R4C-sx-4Te" secondAttribute="trailing" constant="8" symbolic="YES" id="JfR-eu-rtg"/>
+                                        <constraint firstItem="R4C-sx-4Te" firstAttribute="leading" secondItem="KRg-3n-Gzc" secondAttribute="leadingMargin" id="adG-uT-q6q"/>
+                                        <constraint firstItem="JVK-2V-9ob" firstAttribute="trailing" secondItem="KRg-3n-Gzc" secondAttribute="trailingMargin" id="zNu-Hc-azy"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addMastery" destination="JVK-2V-9ob" id="cIa-Xo-eL8"/>
@@ -101,7 +110,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Masteries" id="wyj-50-red"/>
-                    <navigationItem key="navigationItem" title="Life Assistant" id="DKP-Xh-E1y"/>
+                    <navigationItem key="navigationItem" id="DKP-Xh-E1y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ec-9H-Abe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,21 +132,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEW-kD-yZd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEW-kD-yZd">
                                             <rect key="frame" x="8" y="8" width="169" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="169" id="hJY-pQ-pHR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34Y-7n-CAx">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34Y-7n-CAx">
                                             <rect key="frame" x="185" y="8" width="182" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pEW-kD-yZd" firstAttribute="leading" secondItem="A9b-za-1wu" secondAttribute="leadingMargin" id="31A-f8-dad"/>
+                                        <constraint firstItem="pEW-kD-yZd" firstAttribute="firstBaseline" secondItem="34Y-7n-CAx" secondAttribute="firstBaseline" id="Ltz-oJ-qdD"/>
+                                        <constraint firstItem="pEW-kD-yZd" firstAttribute="centerY" secondItem="34Y-7n-CAx" secondAttribute="centerY" id="QMp-dT-W5z"/>
+                                        <constraint firstItem="34Y-7n-CAx" firstAttribute="leading" secondItem="pEW-kD-yZd" secondAttribute="trailing" constant="8" symbolic="YES" id="VWg-wM-lix"/>
+                                        <constraint firstItem="34Y-7n-CAx" firstAttribute="trailing" secondItem="A9b-za-1wu" secondAttribute="trailingMargin" id="bdB-2Z-tLR"/>
+                                        <constraint firstItem="pEW-kD-yZd" firstAttribute="bottom" secondItem="A9b-za-1wu" secondAttribute="bottomMargin" id="hpS-yI-vMS"/>
+                                        <constraint firstItem="pEW-kD-yZd" firstAttribute="top" secondItem="A9b-za-1wu" secondAttribute="topMargin" id="uJ8-tD-0xk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="experienceLabel" destination="34Y-7n-CAx" id="IiZ-aZ-pz1"/>
@@ -162,13 +181,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uw4-My-uWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XDg-jL-BbH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DUU-hi-UUd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DUU-hi-UUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.063981674115013099" green="0.098278135042369388" blue="0.2596745466321243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.18761278125513831" green="0.21140696922975821" blue="0.2596745466321243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                            <color key="textColor" red="0.9681034221009347" green="1" blue="0.99101086824131024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" red="0.87242227945147233" green="1" blue="0.99642471759164841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -179,12 +198,12 @@
             </objects>
             <point key="canvasLocation" x="799.20000000000005" y="104.7976011994003"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Life Assistant-->
         <scene sceneID="vUO-NK-SgN">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="D7j-xO-E2V" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Q7y-Pd-0Pv"/>
+                    <navigationItem key="navigationItem" title="Life Assistant" id="Q7y-Pd-0Pv"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jJq-lk-sg6">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
