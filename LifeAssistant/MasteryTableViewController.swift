@@ -45,12 +45,15 @@ class MasteryTableViewController: UITableViewController {
         return masteryNum + 1
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row < masteryNum) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MasteryCell" , for: indexPath) as! MasteryTableViewCell
             cell.masteryLabel.text = DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as? String
+            
+            cell.deleteMastery.tag = indexPath.row
+            cell.deleteMastery.addTarget(self, action: #selector(MasteryTableViewController.deleteToggled(_:)), for: UIControlEvents.touchUpInside)
+            
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell" , for: indexPath) as! MasteryTableViewCell
@@ -65,7 +68,14 @@ class MasteryTableViewController: UITableViewController {
     }
     
     func deleteToggled(_ sender: UIButton) {
+        for i in sender.tag...(masteryNum - 1) {
+            DataManager.defaults.set(DataManager.defaults.object(forKey: "\(i + 2)") as? String, forKey: "\(i + 1)")
+        }
         
+        masteryNum -= 1
+        DataManager.setMasteryNum(number: masteryNum)
+        
+        self.tableView.reloadData()
     }
 
     func masteryTextEditEnded(_ sender: UITextField) {
