@@ -169,7 +169,19 @@
                             <outlet property="delegate" destination="D7U-Nq-C9V" id="LJl-Ft-ze7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Experience" id="nRr-ge-x4F"/>
+                    <tabBarItem key="tabBarItem" title="Experience" id="x2O-1h-EOm"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3HP-WS-paH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="avT-jz-Kr2">
+                            <connections>
+                                <action selector="reloadScreen:" destination="D7U-Nq-C9V" id="YJY-B5-LPg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="reloadButton" destination="avT-jz-Kr2" id="Vss-q3-Gr4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YM0-GU-S5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

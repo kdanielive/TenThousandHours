@@ -9,6 +9,8 @@
 import UIKit
 
 class ExperienceTableViewController: UITableViewController {
+    
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,9 @@ class ExperienceTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func reloadScreen(_ sender: UIBarButtonItem) {
+        self.tableView.reloadData()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
