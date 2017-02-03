@@ -212,11 +212,11 @@
             </objects>
             <point key="canvasLocation" x="1570" y="105"/>
         </scene>
-        <!--Masteries-->
+        <!--My Life-->
         <scene sceneID="qSZ-Sy-djR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="anw-Bc-yxr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Masteries" id="wyj-50-red"/>
+                    <tabBarItem key="tabBarItem" title="My Life" image="My Life" id="wyj-50-red"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vkv-bJ-iUD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -239,7 +239,7 @@
         <scene sceneID="oYl-Le-thY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKZ-1r-Rh8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Experience" id="x2O-1h-EOm"/>
+                    <tabBarItem key="tabBarItem" title="Experience" image="Experience" id="x2O-1h-EOm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kfy-90-oif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -259,4 +259,8 @@
             <point key="canvasLocation" x="2700" y="531"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Experience" width="30" height="30"/>
+        <image name="My Life" width="30" height="30"/>
+    </resources>
 </document>

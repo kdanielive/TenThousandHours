@@ -102,12 +102,16 @@ class MasteryTableViewController: UITableViewController {
     }
     
     func deleteToggled(_ sender: UIButton) {
+        let targetString = DataManager.defaults.object(forKey: "\(sender.tag + 1)") as? String
+        DataManager.defaults.removeObject(forKey: targetString!)
+        
         for i in sender.tag...(masteryNum - 1) {
             DataManager.defaults.set(DataManager.defaults.object(forKey: "\(i + 2)") as? String, forKey: "\(i + 1)")
         }
         
         masteryNum -= 1
         DataManager.setMasteryNum(number: masteryNum)
+        DataManager.defaults.set(0, forKey: "lastTag")
         
         self.tableView.reloadData()
     }
