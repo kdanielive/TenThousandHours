@@ -10,6 +10,7 @@ import UIKit
 
 class MasteryTableViewController: UITableViewController {
     
+    
     var masteryNum = 0
     
     var startedTime = NSDate()
