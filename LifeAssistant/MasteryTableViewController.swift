@@ -15,6 +15,8 @@ class MasteryTableViewController: UITableViewController {
     
     var startedTime = NSDate()
     var lastStartedTime = NSDate()
+    
+    var rowForSelectedButton = 0;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,12 @@ class MasteryTableViewController: UITableViewController {
             cell.startTime.tag = indexPath.row
             print(cell.startTime.tag)
             
+            if(rowForSelectedButton == indexPath.row + 1) {
+                cell.startTime.backgroundColor = UIColor.blue
+            } else {
+                cell.startTime.backgroundColor = UIColor.lightGray
+            }
+            
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell" , for: indexPath) as! MasteryTableViewCell
@@ -97,6 +105,9 @@ class MasteryTableViewController: UITableViewController {
         } else {
             DataManager.defaults.set(currentTag + 1, forKey: "lastTag")
         }
+        
+        rowForSelectedButton = sender.tag + 1
+        self.tableView.reloadData()
         
         print(elapsedTime)
     }
