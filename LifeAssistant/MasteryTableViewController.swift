@@ -64,7 +64,8 @@ class MasteryTableViewController: UITableViewController {
             
             cell.startTime.addTarget(self, action: #selector(MasteryTableViewController.startTimer(_:)), for: UIControlEvents.touchUpInside)
             cell.startTime.tag = indexPath.row
-            print(cell.startTime.tag)
+            
+            rowForSelectedButton = DataManager.defaults.integer(forKey: "rowForLastSelected")
             
             if(rowForSelectedButton == indexPath.row + 1) {
                 cell.startTime.backgroundColor = UIColor.blue
@@ -85,8 +86,16 @@ class MasteryTableViewController: UITableViewController {
     }
     
     func startTimer(_ sender: UIButton) {
-        lastStartedTime = startedTime
+        if(DataManager.defaults.object(forKey: "startTimeInDefault") != nil) {
+            lastStartedTime = DataManager.defaults.object(forKey: "startTimeInDefault") as! NSDate
+        } else {
+            lastStartedTime = startedTime
+        }
+        
+        DataManager.defaults.set(sender.tag + 1, forKey: "rowForLastSelected")
+        
         startedTime = NSDate()
+        DataManager.defaults.set(startedTime, forKey: "startTimeInDefault")
         
         let currentTag = sender.tag
         
@@ -105,7 +114,6 @@ class MasteryTableViewController: UITableViewController {
             DataManager.defaults.set(currentTag + 1, forKey: "lastTag")
         }
         
-        rowForSelectedButton = sender.tag + 1
         self.tableView.reloadData()
         
         print(elapsedTime)
