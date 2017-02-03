@@ -48,6 +48,8 @@ class ExperienceTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ExperienceCell" , for: indexPath) as! ExperienceTableViewCell
         cell.masteryLabel.text = DataManager.defaults.object(forKey: "\(indexPath.row + 1)") as? String
         
+        print(DataManager.defaults.double(forKey: DataManager.defaults.object(forKey: "\(row + 1)") as! String))
+        
         cell.experienceLabel.text = "\(DataManager.getHour(index: row)) h  \(DataManager.getMinute(index: row)) m \(DataManager.getSecond(index: row)) s"
         // Configure the cell...
 

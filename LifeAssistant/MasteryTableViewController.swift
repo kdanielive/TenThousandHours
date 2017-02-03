@@ -71,7 +71,6 @@ class MasteryTableViewController: UITableViewController {
             } else {
                 cell.startTime.backgroundColor = UIColor.lightGray
             }
-            
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell" , for: indexPath) as! MasteryTableViewCell
