@@ -156,6 +156,8 @@ class MasteryTableViewController: UITableViewController {
             DataManager.defaults.set(0, forKey: targetString)
         }
         DataManager.defaults.set(0, forKey: "lastTag")
+        DataManager.defaults.set(0, forKey: "rowForLastSelected")
+        self.tableView.reloadData()
     }
     /*
     // Override to support conditional editing of the table view.
