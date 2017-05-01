@@ -10,6 +10,7 @@ import UIKit
 
 class MasteryTableViewController: UITableViewController {
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     var masteryNum = 0
     
@@ -24,6 +25,7 @@ class MasteryTableViewController: UITableViewController {
         self.navigationController?.navigationBar.isTranslucent = false;
         
         masteryNum = DataManager.defaults.integer(forKey: "masteryNum")
+        print(masteryNum)
         
         self.tableView.allowsSelection = false
         
@@ -148,6 +150,13 @@ class MasteryTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
+    @IBAction func resetElapsedTime(_ sender: UIBarButtonItem) {
+        for idx in 1...masteryNum {
+            let targetString = DataManager.defaults.object(forKey: "\(idx)") as! String
+            DataManager.defaults.set(0, forKey: targetString)
+        }
+        DataManager.defaults.set(0, forKey: "lastTag")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
